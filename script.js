@@ -1,3 +1,16 @@
+// Funcionalidad de descarga PDF
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    const element = document.querySelector('.container');
+    const opt = {
+        margin: 10,
+        filename: 'Curriculum_Erick_Coto_Orozco.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+    };
+    html2pdf().set(opt).from(element).save();
+});
+
 // Animación de aparición al scrollear
 document.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('.section');
